@@ -11,18 +11,17 @@ void main(List<String> arguments) {
     // функция принимает стринг
     List<int> a = []; // создается пустой массив
     String bub = ""; // создается пустоая строка
-    bool m = true; //бул м труе
 
     for (int i = 0; i < bub_0.length; i++) {
       //перебор строки
-      while (bub_0[i] != " " && m) {
+      while (bub_0[i] != " " && true) {
         //работает цикл пока текущий элемнт не пробел
         bub += bub_0[i];
         if (i < bub_0.length - 1) {
           //проверка есть ли следущее
           i++; //если есть то и++
         } else {
-          m = false; //если нет то заканчиваем перебор
+          break; //если нет то заканчиваем перебор
         }
       }
       a.add(int.parse(bub)); //добавляет число в массив
@@ -32,8 +31,8 @@ void main(List<String> arguments) {
   }
 
   void main() async {
-    final file = File('C:\\Users\\User\\Documents\\rab3.txt');
-    var output = File('C:\\Users\\User\\Documents\\rab3.output.txt');
+    final file = File('C:\Users\User\Documents\dart_rab3\bin\rab3.txt');
+    var output = File('C:\\Users\\User\\Documents\\dart_rab3\\binrab3.output.txt');
     Stream<String> lines = file
         .openRead() //читает файл
         .transform(utf8.decoder) // Decode bytes to UTF-8.
@@ -51,8 +50,7 @@ void main(List<String> arguments) {
     for (int i = 0; i < numbers_tickets[0]; i++) {
       //  проверка строк ( сколько будет тикетов, столько и строк )
       List<int> ticket = transforming(ai[i + 2]);
-      int num =
-          0; // создание пустой переменной, для того, сколько в текущем билете совпадающий чисел
+      int num = 0; // создание пустой переменной, для того, сколько в текущем билете совпадающий чисел
       for (int n = 0; n < winning_numbers.length; n++) {
         for (int m = 0; m < ticket.length; m++) {
           if (ticket[m] == winning_numbers[n]) {
